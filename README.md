@@ -45,6 +45,9 @@ The runtime provides the global `wiki-hosting` and `writing-skills` skills.
 The wiki's own project-local skill should have a distinct name and contain
 only domain-specific vocabulary, taxonomy, and language.
 
+Cruft is installed in the runtime image, so run `cruft update` from the
+generated wiki's Dev Container terminal to merge template changes.
+
 ## Update the base image
 
 For a versioned runtime release, publish a matching Git tag, for example

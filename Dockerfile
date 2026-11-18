@@ -9,7 +9,8 @@ COPY THIRD_PARTY_NOTICES.md /usr/share/doc/eed-wiki-runtime/THIRD_PARTY_NOTICES.
 RUN chmod 0755 /usr/local/bin/eed-wiki-runtime-entrypoint
 
 USER vscode
-RUN uv tool install 'graphifyy[openai]'
+RUN uv tool install 'graphifyy[openai]' && \
+    uv tool install cruft
 
 ENTRYPOINT ["/usr/local/bin/eed-wiki-runtime-entrypoint"]
 CMD ["sleep", "infinity"]
