@@ -19,9 +19,9 @@ permission to dispatch workflows in this repository for automatic rebuilds.
 
 ## Run locally
 
-Copy `.env.example` to `.env`, set `MISTRAL_API_KEY`, and set
-`OPENAI_API_KEY` if Graphify should use an OpenAI-compatible backend. The
-defaults route Graphify document extraction through Mistral:
+Copy `.env.example` to `.env` and set `MISTRAL_API_KEY`. Graphify defaults to
+the Mistral OpenAI-compatible endpoint and uses that key unless a separate
+`OPENAI_API_KEY` is provided:
 
 ```powershell
 Copy-Item .env.example .env
