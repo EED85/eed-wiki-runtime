@@ -1,0 +1,8 @@
+{
+  "name": "eed-wiki-runtime",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "ai",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "none",
+  "remoteUser": "vscode"
+}

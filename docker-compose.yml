@@ -1,0 +1,27 @@
+services:
+  ai:
+    image: ghcr.io/eed85/eed-wiki-runtime:${RUNTIME_VERSION:-dev}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SANDBOX_VERSION: ${SANDBOX_VERSION:-1.0.0}
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    init: true
+    restart: unless-stopped
+    command: ["sleep", "infinity"]
+    environment:
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.mistral.ai/v1}
+      OPENAI_MODEL: ${OPENAI_MODEL:-mistral-large-latest}
+    volumes:
+      - type: bind
+        source: ${WIKI_PATH:-.}
+        target: /workspace
+      - vibe-home:/home/vscode/.vibe
+
+volumes:
+  vibe-home:
